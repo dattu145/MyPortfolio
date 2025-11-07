@@ -20,8 +20,8 @@ function AboutSection() {
   const handleResume = () => {
     // Direct PDF download
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Dattu_Resume.pdf';
+    link.href = aboutData.resumeUrl;
+    link.download = 'DattaVigneshResume.pdf';
     link.click();
   };
 
