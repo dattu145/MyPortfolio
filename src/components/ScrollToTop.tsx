@@ -33,16 +33,16 @@ function ScrollToTop() {
   };
 
   return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-pink-600 hover:bg-pink-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 z-50 group"
-        >
-          <ChevronUp size={24} className="group-hover:-translate-y-1 transition-transform" />
-        </button>
-      )}
-    </>
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-5 right-4 w-10 h-10 bg-gradient-to-br from-pink-600 to-rose-600 hover:bg-gradient-to-br hover:from-gray-600 hover:to-gray-700 text-white rounded-full flex items-center justify-center transition-all duration-300 z-50 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-10 scale-50 pointer-events-none'
+      }`}
+    >
+      <ChevronUp size={24} className="transition-transform duration-300 hover:-translate-y-1" />
+    </button>
   );
 }
 

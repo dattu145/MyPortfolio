@@ -32,8 +32,8 @@ function AboutSection() {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-pink-600/10 dark:bg-pink-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-rose-600/10 dark:bg-rose-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-pink-600/10 dark:bg-pink-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-rose-600/10 dark:bg-rose-400/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl w-full relative z-10">
@@ -57,12 +57,12 @@ function AboutSection() {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-rose-600/20 dark:from-pink-500/30 dark:to-rose-500/30 rounded-2xl lg:rounded-3xl blur-2xl lg:blur-3xl"></div>
-            <div className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden border border-zinc-800 dark:border-zinc-700">
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-rose-600/20 rounded-2xl lg:rounded-3xl blur-2xl lg:blur-3xl"></div>
+            <div className="relative flex items-center justify-center aspect-square rounded-2xl lg:rounded-3xl overflow-hidden dark:border-zinc-700">
               <img
                 src={aboutData.aboutImage}
                 alt="About"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-120 h-full rounded-xl object-cover grayscale-100 hover:grayscale transition-all duration-500"
               />
               <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-lg text-sm">
                 <span className="text-pink-600 dark:text-pink-500 font-mono text-xs sm:text-sm">{aboutData.tagline}</span>
@@ -96,7 +96,7 @@ function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 text-center hover:border-pink-600 dark:hover:border-pink-500 transition-colors group"
+                    className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 text-center  transition-colors group"
                   >
                     <Icon size={28} className="mx-auto mb-2 sm:mb-3 text-pink-600 dark:text-pink-500 group-hover:scale-110 transition-transform" />
                     <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{stat.label}</div>

@@ -21,7 +21,7 @@ export const aboutData: AboutData = {
   name: "Dattu",
   role: "SDE Aspirant",
   description: "Driving innovation by building scalable, interactive systems with MERN Stack technologies.",
-  aboutImage: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
+  aboutImage: "/mypic.png",
   tagline: "Dattu's Portfolio",
   stats: [
     { icon: "Award", label: "Experience", value: "Fresher" },

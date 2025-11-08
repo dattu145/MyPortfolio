@@ -53,7 +53,7 @@ function QualificationsSection() {
                 >
                   <div className="absolute -left-7 sm:-left-10 top-0 w-3 h-3 sm:w-4 sm:h-4 bg-pink-600 dark:bg-pink-500 rounded-full border-2 sm:border-4 border-white dark:border-black group-hover:scale-125 transition-transform"></div>
 
-                  <div className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 hover:border-pink-600 dark:hover:border-pink-500 transition-colors">
+                  <div className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 transition-colors">
                     <h4 className="text-base sm:text-lg font-bold text-gray-800 dark:text-white mb-1 sm:mb-2">{item.school}</h4>
                     <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-2 sm:mb-3">{item.degree}</p>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-pink-600 dark:text-pink-500">

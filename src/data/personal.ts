@@ -8,10 +8,12 @@ export interface PersonalInfo {
   linkedin: string;
   github: string;
   leetcode: string;
+  gssoctracker: string;
   messenger: string;
   location: string;
   tagline: string;
   profileImage: string;
+  profileVideo: string;
   typingSequences: (string | number)[];
 }
 
@@ -26,9 +28,11 @@ export const personalInfo: PersonalInfo = {
   github: 'https://github.com/dattu145',
   leetcode: 'https://leetcode.com/dattu145233/',
   messenger: 'dattu.vignesh.731',
+  gssoctracker: 'https://gssoc-tracker.netlify.app/dashboard/dattu145',
   location: 'India',
   tagline: 'MERN Stack Developer focused on SDE to build scalable and reliable systems.',
-  profileImage: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800',
+  profileImage: '/propic.png',
+  profileVideo: "",
   typingSequences: [
     'Tech Enthusiast',
     2000,

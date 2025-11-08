@@ -30,7 +30,7 @@ function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 hover:border-pink-600 dark:hover:border-pink-500 transition-colors"
+            className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
           >
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">LeetCode Stats</h3>
@@ -58,7 +58,7 @@ function StatsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 hover:border-pink-600 dark:hover:border-pink-500 transition-colors"
+            className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
           >
             <div className="flex items-center justify-between mb-3 sm:mb-4">
               <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white">GitHub Stats</h3>
@@ -103,7 +103,7 @@ function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-4 sm:mt-6 bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 hover:border-pink-600 dark:hover:border-pink-500 transition-colors"
+          className="mt-4 sm:mt-6 bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
         >
           <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-800 dark:text-white">Contribution Graph</h3>
           <div className="rounded-lg overflow-hidden bg-white dark:bg-black border border-zinc-300 dark:border-zinc-700">

@@ -1,16 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
   preview: {
-    allowedHosts: true // Allow all hosts
+    allowedHosts: true 
   },
   server: {
-    host: true, // Listen on all addresses
+    host: true,
   }
 });

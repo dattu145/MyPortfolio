@@ -56,7 +56,7 @@ function Sidebar() {
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex fixed left-0 top-0 h-screen w-20 bg-white dark:bg-zinc-950 border-r border-gray-200 dark:border-zinc-800 flex-col items-center py-8 z-40">
         <div className="mb-12">
-          <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-rose-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+          <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
             D
           </div>
         </div>
@@ -96,60 +96,64 @@ function Sidebar() {
       </aside>
 
       {/* Mobile Sidebar */}
-      {isMobileOpen && (
-        <div className="lg:hidden fixed inset-0 z-30">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setIsMobileOpen(false)}
-          />
-          
-          {/* Sidebar Panel */}
-          <div className="absolute left-0 top-0 h-full w-64 bg-white dark:bg-zinc-950 border-r border-gray-200 dark:border-zinc-800 flex flex-col py-8">
-            <div className="px-6 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  D
-                </div>
-                <div>
-                  <h1 className="text-gray-900 dark:text-white font-bold text-lg">Dattu</h1>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">MERN Stack Developer</p>
-                </div>
+      <div className={`lg:hidden fixed inset-0 z-30 transition-all duration-300 ease-in-out ${
+        isMobileOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        {/* Backdrop */}
+        <div 
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ease-in-out ${
+            isMobileOpen ? 'opacity-100' : 'opacity-0'
+          }`}
+          onClick={() => setIsMobileOpen(false)}
+        />
+        
+        {/* Sidebar Panel */}
+        <div className={`absolute left-0 top-0 h-full w-64 bg-white dark:bg-zinc-950 border-r border-gray-200 dark:border-zinc-800 flex flex-col py-8 transform transition-transform duration-300 ease-in-out ${
+          isMobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+          <div className="px-6 mb-8">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                D
+              </div>
+              <div>
+                <h1 className="text-gray-900 dark:text-white font-bold text-lg">Dattu</h1>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">MERN Stack Developer</p>
               </div>
             </div>
+          </div>
 
-            <nav className="flex-1 px-4 space-y-2">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`w-full flex items-center gap-4 px-4 py-3 rounded-lg transition-colors ${
-                      activeSection === item.id 
-                        ? 'bg-pink-600 text-white' 
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800'
-                    }`}
-                  >
-                    <Icon size={20} />
-                    <span>{item.label}</span>
-                  </button>
-                );
-              })}
-            </nav>
+          <nav className="flex-1 px-4 space-y-2">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`w-full flex items-center gap-4 px-4 py-3 rounded-lg transition-colors ${
+                    activeSection === item.id 
+                      ? 'bg-pink-600 text-white' 
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800'
+                  }`}
+                >
+                  <Icon size={20} />
+                  <span>{item.label}</span>
+                </button>
+              );
+            })}
+          </nav>
 
-            <div className="px-4">
-              <button
-                onClick={toggleTheme}
-                className="w-full flex items-center gap-4 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
-              >
-                {isDark ? <Sun size={20} /> : <Moon size={20} />}
-                <span>Toggle Theme</span>
-              </button>
-            </div>
+          <div className="px-4">
+            <button
+              onClick={toggleTheme}
+              className="w-full flex items-center gap-4 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+              <span>Toggle Theme</span>
+            </button>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }
