@@ -30,7 +30,7 @@ function ExperienceSection() {
 
         <div className="flex flex-col lg:flex-row gap-4 xs:gap-6 sm:gap-8 lg:gap-12">
           {/* Left Side - Category Tabs */}
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/3 mb-6">
             <div className="flex flex-wrap lg:flex-col gap-2 xs:gap-3 sm:gap-4">
               {skillCategories.map((category, index) => (
                 <button
@@ -58,7 +58,7 @@ function ExperienceSection() {
                     <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-gray-800 dark:text-white break-words">
                       {skill.name}
                     </h3>
-                    <span className="text-pink-600 dark:text-pink-400 font-bold text-xs xs:text-sm sm:text-base">
+                    <span className="text-pink-600 dark:text-rose-400 font-bold text-xs xs:text-sm sm:text-base">
                       {skill.percentage}%
                     </span>
                   </div>

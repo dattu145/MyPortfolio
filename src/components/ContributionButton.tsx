@@ -5,13 +5,11 @@ import { personalInfo } from '../data/personal';
 function ContributionButton() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show/hide button based on scroll position
   useEffect(() => {
     const toggleVisibility = () => {
       const homeSection = document.getElementById('home');
       if (homeSection) {
         const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
-        // Show button when scrolled past home section
         if (window.scrollY > homeSectionBottom - 100) {
           setIsVisible(true);
         } else {

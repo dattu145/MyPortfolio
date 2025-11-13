@@ -23,7 +23,7 @@ function StatsSection() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-white font-bold mt-2">My Developer Stats</h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {/* LeetCode Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

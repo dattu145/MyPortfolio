@@ -32,7 +32,6 @@ function ContactSection() {
 
   return (
     <section id="contact" className="min-h-screen flex items-center bg-gray-100 justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 relative overflow-hidden dark:bg-black">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-tr from-zinc-150 via-white to-zinc-100 dark:from-zinc-900 dark:via-black dark:to-zinc-950"></div>
 
       {/* Animated Background Elements */}
@@ -93,7 +92,7 @@ function ContactSection() {
             viewport={{ once: true }}
             className="bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl p-6 sm:p-8"
           >
-            <form onSubmit={handleSubmit} action="https://formspree.io/f/mvgprgzy" method="POST" className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} action="https://formspree.io/f/mgvwyyak" method="POST" className="space-y-4 sm:space-y-6">
               {formStatus && (
                 <div className={`p-3 sm:p-4 rounded-lg text-sm sm:text-base ${
                   formStatus.includes('success') 
@@ -112,7 +111,7 @@ function ContactSection() {
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Username"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
                   Username
                 </label>
               </div>
@@ -125,7 +124,7 @@ function ContactSection() {
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Email"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
                   Email
                 </label>
               </div>
@@ -137,7 +136,7 @@ function ContactSection() {
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Phone"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
                   Phone
                 </label>
               </div>
@@ -150,7 +149,7 @@ function ContactSection() {
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent resize-none text-gray-800 dark:text-white"
                   placeholder="Message"
                 ></textarea>
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
                   Message
                 </label>
               </div>

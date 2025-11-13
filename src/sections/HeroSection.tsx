@@ -78,10 +78,10 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl text-gray-800 font-bold mb-4 sm:mb-6 dark:text-white"
+            className="text-4xl font-poppins sm:text-5xl lg:text-6xl text-gray-800 font-bold mb-4 sm:mb-6 dark:text-white"
           >
             Hi, I'm{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 dark:from-pink-500 dark:to-rose-500">
+            <span className="text-transparent font-poppins bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 dark:from-pink-500 dark:to-rose-500">
               {personalInfo.name}
             </span>
           </motion.h1>
@@ -91,7 +91,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-gray-700 dark:text-gray-200 mb-4 sm:mb-6 h-12 sm:h-16 flex items-center justify-center lg:justify-start"
+            className="text-lg sm:text-2xl lg:text-3xl font-medium font-poppins text-gray-700 dark:text-gray-200 mb-4 sm:mb-6 h-12 sm:h-16 flex items-center justify-center lg:justify-start"
           >
             <TypeAnimation
               sequence={personalInfo.typingSequences}
