@@ -17,21 +17,23 @@ export const skillCategories = [
     category: "CS Core",
     subtitle: "(Strong Fundamentals)",
     skills: [
-      { name: "Data Structures & Algorithms", percentage: 85 },
+      { name: "DSA in Java (Arrays → Trees → Graphs → DP, etc.)", percentage: 85 },
       { name: "Object-Oriented Programming", percentage: 90 },
-      { name: "Database Management Systems", percentage: 80 },
-      { name: "Operating Systems", percentage: 75 },
-      { name: "Computer Networks", percentage: 70 }
+      { name: "System Design - Scalable architecture, Design Patterns", percentage: 90 },
+      { name: "DBMS & SQL - ACID, Indexing, Normalization", percentage: 80 },
+      { name: "OS Concepts - Threads, Memory Mgmt, Scheduling", percentage: 75 },
+      { name: "Networking - DNS, HTTP, TLS, NAT, Load Balancers", percentage: 70 }
     ]
   },
   {
     category: "Additional Exposure",
     subtitle: "(Basics)",
     skills: [
-      { name: "Python & Django", percentage: 65 },
-      { name: "AWS Cloud Services", percentage: 60 },
-      { name: "Machine Learning Basics", percentage: 50 },
-      { name: "Mobile Development - React Native", percentage: 55 }
+      { name: "Version Control - Git, GitHub/GitLab", percentage: 90 },
+      { name: "Cloud - AWS basics (EC2, S3, Lambda)", percentage: 75 },
+      { name: "DevOps Tools - Docker, Jenkins (CI/CD)", percentage: 80 },
+      { name: "Python Web - Flask", percentage: 85 },
+      { name: "Machine Learning - Scikit-learn, TensorFlow", percentage: 55 }
     ]
   }
 ];
