@@ -29,5 +29,5 @@ export const aboutData: AboutData = {
     { icon: "Headphones", label: "Support", value: "Online 24/7" },
   ],
   linkedinUrl: "https://www.linkedin.com/in/datta-vignesh-b09437223/",
-  resumeUrl: "public/resume.pdf",
+  resumeUrl: "/resume.pdf",
 };

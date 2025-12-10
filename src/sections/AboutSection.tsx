@@ -18,7 +18,6 @@ function AboutSection() {
   };
 
   const handleResume = () => {
-    // Direct PDF download
     const link = document.createElement('a');
     link.href = aboutData.resumeUrl;
     link.download = 'DattaVigneshResume.pdf';
@@ -108,14 +107,14 @@ function AboutSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button 
+              <button
                 onClick={handlePingMe}
                 className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 dark:from-pink-500 dark:to-rose-500 dark:hover:from-pink-600 dark:hover:to-rose-600 rounded-lg flex items-center justify-center gap-2 transition-all group text-sm sm:text-base text-white"
               >
                 <LinkIcon size={18} className="sm:w-5 sm:h-5" />
                 Ping Me
               </button>
-              <button 
+              <button
                 onClick={handleResume}
                 className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 hover:bg-zinc-300/50 dark:hover:bg-zinc-700/50 rounded-lg flex items-center justify-center gap-2 transition-all group text-sm sm:text-base text-gray-800 dark:text-white"
               >
