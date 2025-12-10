@@ -6,6 +6,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  base: '/',
   preview: {
     allowedHosts: true 
   },
