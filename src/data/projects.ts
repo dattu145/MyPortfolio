@@ -20,7 +20,7 @@ export const projects: Project[] = [
     detailedDescription: 'AI-powered web platform that will enable students to create resumes and portfolios seamlessly, with frontend completed and backend in progress. Features include AI-powered resume generation, portfolio builder, student collaboration tools, and project showcase capabilities.',
     image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
     category: 'mern',
-    technologies: ['ReactJS', 'NodeJS', 'TypeScript', 'AI Integration', 'Render Cloud Deployment'],
+    technologies: ['ReactJS', 'NodeJS', 'TypeScript', 'Tailwind CSS', 'Render Cloud Deployment', 'JWT'],
     role: 'Web FullStack',
     created: '8 Aug 2025',
     demo: 'https://peerflex.onrender.com',
