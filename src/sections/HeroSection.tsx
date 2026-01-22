@@ -17,7 +17,7 @@ function HeroSection() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowHighlight(true);
-      
+
       // Remove highlight after 3 seconds
       const removeTimer = setTimeout(() => {
         setShowHighlight(false);
@@ -41,8 +41,8 @@ function HeroSection() {
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         {/* Left Content */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="order-2 lg:order-1 text-center lg:text-left"
         >
@@ -50,7 +50,7 @@ function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-4 sm:mb-6"
           >
             <span className="text-xs sm:text-sm text-gray-800 dark:text-gray-300">Follow Me</span>
@@ -77,7 +77,7 @@ function HeroSection() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl font-poppins sm:text-5xl lg:text-6xl text-gray-800 font-bold mb-4 sm:mb-6 dark:text-white"
           >
             Hi, I'm{' '}
@@ -90,7 +90,7 @@ function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg sm:text-2xl lg:text-3xl font-medium font-poppins text-gray-700 dark:text-gray-200 mb-4 sm:mb-6 h-12 sm:h-16 flex items-center justify-center lg:justify-start"
           >
             <TypeAnimation
@@ -106,7 +106,7 @@ function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0"
           >
             {personalInfo.tagline}
@@ -116,7 +116,7 @@ function HeroSection() {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             onClick={scrollToAbout}
             className="px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 dark:from-pink-500 dark:to-rose-500 dark:hover:from-pink-600 dark:hover:to-rose-600 rounded-lg flex items-center gap-2 transition-all group mx-auto lg:mx-0 text-sm sm:text-base text-white"
           >
@@ -128,7 +128,7 @@ function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mt-8 sm:mt-12 max-w-md mx-auto lg:mx-0"
           >
             {/* Messenger */}
@@ -202,40 +202,28 @@ function HeroSection() {
                 <span className="text-gray-500 dark:text-gray-400">No media provided</span>
               </div>
             )}
-            
+
             {/* GitHub Contributions Button with Highlight Effect */}
             <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 lg:bottom-6 lg:right-6">
-              <motion.a
+              <a
                 href={personalInfo.gssoctracker}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 bg-white dark:bg-gray-100 text-black dark:text-gray-900 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-white transition-all duration-300 inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm relative overflow-hidden ${
-                  showHighlight ? 'ring-4 ring-pink-500/50 scale-105 shadow-2xl' : ''
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className={`px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 bg-white dark:bg-gray-100 text-black dark:text-gray-900 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-white transition-all duration-300 inline-flex items-center gap-1 sm:gap-2 text-xs sm:text-sm relative overflow-hidden transform hover:scale-105 active:scale-95 ${showHighlight ? 'ring-4 ring-pink-500/50 scale-105 shadow-2xl' : ''
+                  }`}
               >
-                {/* Pulsing background effect */}
+                {/* Pulsing background effect fallback (optional CSS) */}
                 {showHighlight && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-rose-500/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 2, repeat: 1 }}
-                  />
+                  <div className="absolute inset-0 bg-pink-500/20 animate-pulse" />
                 )}
-                
-                {/* Floating animation */}
-                <motion.div
-                  animate={showHighlight ? { y: [0, -2, 0] } : { y: 0 }}
-                  transition={{ duration: 1, repeat: 2 }}
-                  className="flex items-center gap-1 sm:gap-2 relative z-10"
-                >
+
+                {/* Floating animation - removed or replaced with CSS if needed */}
+                <div className={`flex items-center gap-1 sm:gap-2 relative z-10 ${showHighlight ? 'animate-bounce' : ''}`}>
                   <Github size={14} className="sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                   <span className="hidden xs:inline">See my Contributions</span>
                   <span className="xs:hidden">Contributions</span>
-                </motion.div>
-              </motion.a>
+                </div>
+              </a>
             </div>
           </div>
         </motion.div>

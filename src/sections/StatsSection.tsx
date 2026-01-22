@@ -3,8 +3,8 @@ import { ExternalLink, RefreshCw, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 
 // Component for GitHub stats (handles cache busting)
-const GitHubStatImage = ({ src, alt, fallbackText }) => {
-  const [imgSrc, setImgSrc] = useState(`${src}?cache=${Date.now()}`);
+const GitHubStatImage = ({ src, alt, fallbackText }: { src: string; alt: string; fallbackText: string }) => {
+  const [imgSrc, setImgSrc] = useState(`${src}&cache=${Date.now()}`);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +22,8 @@ const GitHubStatImage = ({ src, alt, fallbackText }) => {
     setIsLoading(true);
     setHasError(false);
     // Add new cache busting parameter
-    setImgSrc(`${src.split('?')[0]}?cache=${Date.now()}`);
+    const baseUrl = imgSrc.split('&cache=')[0];
+    setImgSrc(`${baseUrl}&cache=${Date.now()}`);
   };
 
   if (hasError) {
@@ -44,26 +45,28 @@ const GitHubStatImage = ({ src, alt, fallbackText }) => {
   }
 
   return (
-    <>
+    <div className="relative min-h-[8rem] w-full">
       {isLoading && (
-        <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-lg"></div>
+        <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
       )}
       <img
         src={imgSrc}
         alt={alt}
-        className={`w-full ${isLoading ? 'hidden' : 'block'}`}
+        className={`w-full h-auto transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         loading="lazy"
         onLoad={handleLoad}
         onError={handleError}
       />
-    </>
+    </div>
   );
 };
 
 // Simple component for LeetCode and other services that don't need cache busting
-const StatImage = ({ src, alt, fallbackText }) => {
+const StatImage = ({ src, alt, fallbackText }: { src: string; alt: string; fallbackText: string }) => {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  // Add a key to force re-render on retry
+  const [retryKey, setRetryKey] = useState(0);
 
   const handleError = () => {
     console.error(`Failed to load ${alt}`);
@@ -76,7 +79,9 @@ const StatImage = ({ src, alt, fallbackText }) => {
   };
 
   const retryLoad = () => {
-    window.location.reload();
+    setHasError(false);
+    setIsLoading(true);
+    setRetryKey(prev => prev + 1);
   };
 
   if (hasError) {
@@ -98,19 +103,20 @@ const StatImage = ({ src, alt, fallbackText }) => {
   }
 
   return (
-    <>
+    <div className="relative min-h-[8rem] w-full">
       {isLoading && (
-        <div className="animate-pulse bg-gray-200 dark:bg-gray-800 h-32 rounded-lg"></div>
+        <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
       )}
       <img
+        key={retryKey}
         src={src}
         alt={alt}
-        className={`w-full ${isLoading ? 'hidden' : 'block'}`}
-        loading="lazy"
+        className={`w-full h-auto transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        loading="eager"
         onLoad={handleLoad}
         onError={handleError}
       />
-    </>
+    </div>
   );
 };
 
@@ -135,7 +141,7 @@ function StatsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12"
         >
@@ -151,7 +157,7 @@ function StatsSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
             className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
           >
@@ -179,7 +185,7 @@ function StatsSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
           >
@@ -233,7 +239,7 @@ function StatsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
           className="mt-4 sm:mt-6 bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-3 sm:p-4 lg:p-6 transition-colors"
         >

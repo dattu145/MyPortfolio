@@ -39,7 +39,7 @@ function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
@@ -50,9 +50,9 @@ function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Image Section */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
@@ -70,19 +70,20 @@ function AboutSection() {
           </motion.div>
 
           {/* Content Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2"
-          >
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-white font-bold mb-4 sm:mb-6">
-              Hi, I'm {aboutData.name}, a {aboutData.role}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
-              {aboutData.description}
-            </p>
+          <div className="order-1 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-white font-bold mb-4 sm:mb-6">
+                Hi, I'm {aboutData.name}, a {aboutData.role}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
+                {aboutData.description}
+              </p>
+            </motion.div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 xs:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -93,9 +94,9 @@ function AboutSection() {
                     key={stat.label}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
                     viewport={{ once: true }}
-                    className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 text-center  transition-colors group"
+                    className="bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-800 dark:border-zinc-700 rounded-xl p-4 sm:p-6 text-center transition-colors group"
                   >
                     <Icon size={28} className="mx-auto mb-2 sm:mb-3 text-pink-600 dark:text-pink-500 group-hover:scale-110 transition-transform" />
                     <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{stat.label}</div>
@@ -106,7 +107,13 @@ function AboutSection() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+            >
               <button
                 onClick={handlePingMe}
                 className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 dark:from-pink-500 dark:to-rose-500 dark:hover:from-pink-600 dark:hover:to-rose-600 rounded-lg flex items-center justify-center gap-2 transition-all group text-sm sm:text-base text-white"
@@ -121,8 +128,8 @@ function AboutSection() {
                 <FileText size={18} className="sm:w-5 sm:h-5" />
                 My Resume
               </button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ function ExperienceSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-8 xs:mb-10 sm:mb-12 lg:mb-16"
         >
@@ -36,11 +36,10 @@ function ExperienceSection() {
                 <button
                   key={index}
                   onClick={() => setActiveTab(index)}
-                  className={`px-4 xs:px-5 sm:px-6 py-3 xs:py-4 rounded-lg xs:rounded-xl text-left border-2 w-full sm:w-auto lg:w-full ${
-                    activeTab === index
-                      ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white border-transparent'
-                      : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-gray-300'
-                  }`}
+                  className={`px-4 xs:px-5 sm:px-6 py-3 xs:py-4 rounded-lg xs:rounded-xl text-left border-2 w-full sm:w-auto lg:w-full transition-colors duration-300 ${activeTab === index
+                    ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white border-transparent'
+                    : 'bg-white dark:bg-zinc-800 border-gray-200 dark:border-zinc-700 text-gray-700 dark:text-gray-300'
+                    }`}
                 >
                   <div className="font-bold text-sm xs:text-base sm:text-lg mb-1">{category.category}</div>
                   <div className="text-xs xs:text-sm opacity-75">{category.subtitle}</div>
@@ -52,7 +51,7 @@ function ExperienceSection() {
           {/* Right Side - Skills List */}
           <div className="lg:w-2/3">
             <div className="space-y-4 xs:space-y-6 sm:space-y-8">
-              {skillCategories[activeTab].skills.map((skill, index) => (
+              {skillCategories[activeTab].skills.map((skill) => (
                 <div key={skill.name} className="mb-4 xs:mb-6">
                   <div className="flex flex-col xs:flex-row xs:justify-between xs:items-center gap-1 xs:gap-2 mb-2">
                     <h3 className="text-sm xs:text-base sm:text-lg font-semibold text-gray-800 dark:text-white break-words">
@@ -63,12 +62,12 @@ function ExperienceSection() {
                     </span>
                   </div>
 
-                  {/* Progress Bar with Animation */}
+                  {/* Progress Bar with Framer Motion Animation */}
                   <div className="w-full bg-gray-100 dark:bg-zinc-700 rounded-full h-1.5 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.percentage}%` }}
-                      transition={{ duration: 1.5, delay: index * 0.1 }}
+                      transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
                       className="h-full bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"
                     />
@@ -83,7 +82,7 @@ function ExperienceSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-8 xs:mt-10 sm:mt-12 text-center"
         >

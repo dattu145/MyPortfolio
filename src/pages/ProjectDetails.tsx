@@ -60,6 +60,7 @@ function ProjectDetails() {
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
           onClick={handleBackToProjects}
           className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-500 transition-colors mb-6 xs:mb-8 group text-sm xs:text-base"
         >
@@ -146,12 +147,7 @@ function ProjectDetails() {
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 xs:mt-10 sm:mt-12 text-center"
-          >
+          <div className="mt-8 xs:mt-10 sm:mt-12 text-center">
             <h3 className="text-lg xs:text-xl sm:text-2xl font-bold mb-3 xs:mb-4 text-gray-800 dark:text-white">Interested in working together?</h3>
             <button
               onClick={handleGetInTouch}
@@ -159,7 +155,7 @@ function ProjectDetails() {
             >
               Get in Touch
             </button>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>

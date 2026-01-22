@@ -16,9 +16,14 @@ export const projects: Project[] = [
   {
     id: 'peerflex',
     title: 'Peerflex - A student Economy',
-    description: 'AI-powered web platform that will enable students to create resumes and portfolios seamlessly, with frontend completed and backend in progress.',
-    detailedDescription: 'AI-powered web platform that will enable students to create resumes and portfolios seamlessly, with frontend completed and backend in progress. Features include AI-powered resume generation, portfolio builder, student collaboration tools, and project showcase capabilities.',
-    image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'A full-scale student collaboration platform built to help students chat in real time, share notes, create events and plan hangouts.',
+    detailedDescription: `
+
+    Peerflex is a full-scale student collaboration platform built to make campus communication faster, organized, and more interactive. It includes real-time chat, note sharing, event creation, and AI-powered workflows - all wrapped in a modular, scalable architecture.
+
+    The system is designed with plug-and-play microfeatures so new modules (tasks, groups, AI tools, etc.) can be added without breaking the codebase. I structured the backend using a relational SQL schema with optimized indexing and load-tested it to support 2,000+ concurrent users while maintaining <250ms P95 latency.
+    `,
+    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
     category: 'mern',
     technologies: ['ReactJS', 'NodeJS', 'TypeScript', 'Tailwind CSS', 'Render Cloud Deployment', 'JWT'],
     role: 'Web FullStack',

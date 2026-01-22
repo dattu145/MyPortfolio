@@ -44,7 +44,7 @@ function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-8 sm:mb-12"
         >
@@ -54,9 +54,9 @@ function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-4 sm:space-y-6"
           >
@@ -86,19 +86,18 @@ function ContactSection() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
             className="bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-xl p-6 sm:p-8"
           >
             <form onSubmit={handleSubmit} action="https://formspree.io/f/mgvwyyak" method="POST" className="space-y-4 sm:space-y-6">
               {formStatus && (
-                <div className={`p-3 sm:p-4 rounded-lg text-sm sm:text-base ${
-                  formStatus.includes('success') 
-                    ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400' 
-                    : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400'
-                }`}>
+                <div className={`p-3 sm:p-4 rounded-lg text-sm sm:text-base ${formStatus.includes('success')
+                  ? 'bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400'
+                  : 'bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400'
+                  }`}>
                   {formStatus}
                 </div>
               )}
@@ -166,13 +165,12 @@ function ContactSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
           className="text-center mt-8 sm:mt-12 text-gray-500 dark:text-gray-400 text-xs sm:text-sm"
         >
-          <p>© 2025 Dattu. Built with React, TypeScript & Tailwind CSS</p>
         </motion.div>
       </div>
     </section>
