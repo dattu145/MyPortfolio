@@ -104,51 +104,55 @@ function ContactSection() {
 
               <div className="relative">
                 <input
+                  id="username"
                   type="text"
                   name="username"
                   required
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Username"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
+                <label htmlFor="username" className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
                   Username
                 </label>
               </div>
 
               <div className="relative">
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   required
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Email"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
+                <label htmlFor="email" className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:bg-zinc-800 dark:peer-focus:text-pink-500">
                   Email
                 </label>
               </div>
 
               <div className="relative">
                 <input
+                  id="phone"
                   type="tel"
                   name="phone"
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent text-gray-800 dark:text-white"
                   placeholder="Phone"
                 />
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label htmlFor="phone" className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
                   Phone
                 </label>
               </div>
 
               <div className="relative">
                 <textarea
+                  id="message"
                   name="message"
                   required
                   rows={4}
                   className="w-full bg-white dark:bg-zinc-700 border border-gray-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm sm:text-base focus:outline-none focus:border-pink-600 dark:focus:border-pink-500 transition-colors peer placeholder-transparent resize-none text-gray-800 dark:text-white"
                   placeholder="Message"
                 ></textarea>
-                <label className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
+                <label htmlFor="message" className="absolute left-4 -top-2.5 bg-white dark:bg-zinc-700 dark:peer-focus:bg-zinc-800 px-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-pink-600 dark:peer-focus:text-pink-500">
                   Message
                 </label>
               </div>
